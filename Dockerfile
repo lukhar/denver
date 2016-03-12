@@ -40,11 +40,8 @@ RUN git config --global url."https://github.com/".insteadOf git@github.com: && \
     git clone https://github.com/lukhar/.vim && \
     sh ~/.config/bootstrap.sh
 
-RUN echo 'source /usr/bin/virtualenvwrapper.sh' >> ~/.bashrc
-
 RUN source /usr/bin/virtualenvwrapper.sh && \
     mkvirtualenv -p python2 python2 && \
     vim +PlugInstall +qall
-
 
 ENTRYPOINT /bin/bash
